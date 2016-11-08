@@ -4,92 +4,12 @@
 <meta charset="utf-8">
 <title>无标题文档</title>
 <style>
-*{margin:0;padding:0;}
-#box{width:150px; height:150px; background:red; position:absolute; top:0; left:0; border-radius:50%;}
 </style>
 <script>
-window.onload=function (){
-	var oDiv=document.getElementById('box');
-	
-	var timer=null;
-	var iSpeedX=0;
-	var iSpeedY=0;
-	var oldX=0;
-	var oldY=0;
-	
-	oDiv.onmousedown=function (ev){
-		var oEvent=ev||event;
-		var disX=oEvent.clientX-oDiv.offsetLeft;
-		var disY=oEvent.clientY-oDiv.offsetTop;
-		document.onmousemove=function (ev){
-			var oEvent=ev||event;
-			
-			oDiv.style.left=oEvent.clientX-disX+'px';
-			oDiv.style.top=oEvent.clientY-disY+'px';
-			
-			iSpeedX=oEvent.clientX-oldX;
-			iSpeedY=oEvent.clientY-oldY;
-			
-			//只要移动就更新old值
-			oldX=oEvent.clientX;
-			oldY=oEvent.clientY;
-		
-		};
-		document.onmouseup=function (){
-			document.onmousemove=null;
-			document.onmouseup=null;
-			move();
-		};
-		return false;
-	};
-	function move(){
-		clearInterval(timer);
-		timer=setInterval(function (){
-			
-			iSpeedY+=3;
-			
-			var l=oDiv.offsetLeft+iSpeedX;
-			var t=oDiv.offsetTop+iSpeedY;
-			
-			if(t>document.documentElement.clientHeight-oDiv.offsetHeight){
-				t=document.documentElement.clientHeight-oDiv.offsetHeight;
-				iSpeedY*=-0.85;
-				iSpeedX*=0.85;
-			}
-			if(l>document.documentElement.clientWidth-oDiv.offsetWidth){
-				l=document.documentElement.clientWidth-oDiv.offsetWidth;
-				iSpeedX*=-0.85;
-				iSpeedY*=0.85;
-			}
-			
-			if(t<0){
-				t=0;
-				iSpeedY*=-0.85;
-				iSpeedX*=0.85;
-			}
-			if(l<0){
-				l=0;
-				iSpeedX*=-0.85;
-				iSpeedY*=0.85;
-			}
-			
-			oDiv.style.left=l+'px';
-			oDiv.style.top=t+'px';
-			
-			if(Math.abs(iSpeedX)<1)iSpeedX=0;
-			if(Math.abs(iSpeedY)<1)iSpeedY=0;
-			
-			if(iSpeedX==0&&iSpeedY==0&&t>=document.documentElement.clientHeight-oDiv.offsetHeight){
-				clearInterval(timer);
-			}
-			
-		},16);
-	};
-};
 </script>
 </head>
 
 <body>
-<div id="box"></div>
+	<a href="mobile/wanjidao/index.html">wanjidao</a>
 </body>
 </html>

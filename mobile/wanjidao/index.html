@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<!--视口/页面宽度跟设备宽度走,初始缩放比例1,-->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no,email=no">
+<title></title>
+<link type="text/css" rel="stylesheet" href="style/base.css" />
+<style>
+html{ font-size:100px;}
+.mobile{ width:6.4rem; margin:0 auto;}
+/*头部*/
+header{ padding-top:0.16rem; width:100%; height:0.64rem; background:#99ca00; border-bottom:0.08rem solid #649901;}
+header div{ width:0.96rem; height:0.48rem; background:url(img/logo.jpg) no-repeat; background-size:100%; margin-left:0.16rem;}
+header ul{ width:0.8rem; height:0.48rem; overflow:hidden; background:#fff; border-radius:0.06rem; margin-left:0.2rem;}
+header ul li{ width:100%; height:100%; text-align:center; line-height:0.48rem; font-size:0.2rem;}
+header input[type=search]{ width:2.96rem; height:0.48rem; margin-left:0.16rem; border-radius:0.24rem; padding-left:0.2rem; font-size:0.2rem;}
+header span{ width:0.8rem; height:0.48rem; background:url(img/aniu.jpg) no-repeat; background-size:100%; margin-left:0.16rem;}
+
+.content{ width:6rem; margin:0.3rem auto; overflow:hidden;}
+/*选项卡*/
+.box{ width:100%; height:2rem; background:red; overflow:hidden;}
+.box li{ width:100%; height:100%;}
+.box li img{ width:100%;}
+/*nav*/
+nav{ width:6rem; height:1.68rem; margin-top:0.2rem; background:url(img/nav.jpg) no-repeat; background-size:100%;}
+nav li{ width:1rem; height:0.72rem; margin:0.04rem; border:0.02rem solid #ebebeb; border-radius:0.04rem; float:left; font-size:0.24rem; line-height:0.72rem; padding-left:0.88rem;}
+/*推荐*/
+.tui{ width:100%; height:1rem;}
+.tui div{ width:1.88rem; height:100%; line-height:1rem; font-size:0.28rem; font-weight:bold;}
+.tui span{ width:3.44rem; height:0; border-top:1px solid #e1e1e1; margin-top:0.49rem;}
+.tui i{ margin-right:0.08rem; color:#e1e1e1; margin-top:0.38rem; font-size:0.24rem;}
+/*推荐内容*/
+.game{ height:2.3rem; width:18.2rem;}
+.game li{ width:1.5rem; margin-right:0.32rem;}
+.game img{ width:100%;}
+.game span{ font-size:0.2rem; display:block; margin-top:0.2rem;}
+.game div{ width:1.5rem; height:0.28rem; margin-top:0.14rem;}
+.game div img{ width:0.3rem; height:0.28rem; float:left;}
+/*头条*/
+.toutiao{ height:2rem; width:9.44rem; overflow:hidden; margin-bottom:0.54rem;}
+.toutiao li{ width:4.4rem; height:100%; border-radius:0.06rem; position:relative; margin-right:0.32rem;}
+.toutiao img{ width:100%;}
+.toutiao span{ position:absolute; bottom:0; left:0; width:100%; height:0.36rem; text-align:center; line-height:0.36rem; background:#000; color:#fff; font-size:0.2rem; border-bottom-left-radius:0.06rem; border-bottom-right-radius:0.06rem;}
+/*底部*/
+footer{ width:100%; height:0.82rem; background:#f2f2f2; padding-top:0.3rem; position:relative;}
+footer div{ width:100%; text-align:center; margin-bottom:0.26rem; font-size:0.2rem}
+footer a{ font-size:0.2rem;}
+footer i{ display:block; width:100%; font-size:0.2rem; text-align:center;}
+footer em{ width:0.96rem; height:0.96rem; position:absolute; border-radius:0.14rem; background:url(img/logo2.jpg) no-repeat; background-size:100%; bottom:0; left:0;}
+</style>
+<script>
+;(function(win,doc){
+	function change (){
+		doc.documentElement.style.fontSize = 100*doc.documentElement.clientWidth/640+'px';
+	}
+	change();
+	win.addEventListener('resize',change,false);
+})(window,document);
+</script>
+</head>
+
+<body>
+<div class="mobile">
+	<header class="clearfix">
+    	<div class="fl logo"></div>
+        <ul class="fl">
+        	<li class="">网游</li>
+        	<li>单机</li>
+        	<li>页游</li>
+        </ul>
+        <input type="search" class="fl"/>
+        <span class="fl"></span>
+    </header>
+	<div class="content">
+        <ul class="box clearfix">
+            <li><img src="img/1.jpg" /></li>
+            <li><img src="img/1.jpg" /></li>
+            <li><img src="img/1.jpg" /></li>
+            <li><img src="img/1.jpg" /></li>
+            <li><img src="img/1.jpg" /></li>
+        </ul>
+        <nav>
+        	<ul class="navt">
+            	<li>玩网游</li>
+            	<li>耍单机</li>
+            	<li>查攻略</li>
+            </ul>
+        	<ul class="navb">
+            	<li>看评测</li>
+            	<li>找专题</li>
+            	<li>度资讯</li>
+            </ul>
+        </nav>
+        <div class="tui clearfix">
+        	<div class="fl">推荐手机游戏</div>
+            <span class="fl"></span>
+            <i class="fr"><·></i>
+        </div>
+        <ul class="game clearfix">
+        	<li class="fl">
+            	<img src="img/game.jpg"/>
+                <span>时空猎人</span>
+                <div class="clearfix">
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                </div>
+            </li>
+        	<li class="fl">
+            	<img src="img/game.jpg"/>
+                <span>时空猎人</span>
+                <div class="clearfix">
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                </div>
+            </li>
+        	<li class="fl">
+            	<img src="img/game.jpg"/>
+                <span>时空猎人</span>
+                <div class="clearfix">
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                </div>
+            </li>
+        	<li class="fl">
+            	<img src="img/game.jpg"/>
+                <span>时空猎人</span>
+                <div class="clearfix">
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                </div>
+            </li>
+        	<li class="fl">
+            	<img src="img/game.jpg"/>
+                <span>时空猎人</span>
+                <div class="clearfix">
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                </div>
+            </li>
+        	<li class="fl">
+            	<img src="img/game.jpg"/>
+                <span>时空猎人</span>
+                <div class="clearfix">
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                </div>
+            </li>
+        	<li class="fl">
+            	<img src="img/game.jpg"/>
+                <span>时空猎人</span>
+                <div class="clearfix">
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                </div>
+            </li>
+        	<li class="fl">
+            	<img src="img/game.jpg"/>
+                <span>时空猎人</span>
+                <div class="clearfix">
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                </div>
+            </li>
+        	<li class="fl">
+            	<img src="img/game.jpg"/>
+                <span>时空猎人</span>
+                <div class="clearfix">
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                </div>
+            </li>
+        	<li class="fl">
+            	<img src="img/game.jpg"/>
+                <span>时空猎人</span>
+                <div class="clearfix">
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                	<img src="img/liang.jpg"/>
+                </div>
+            </li>
+        </ul>
+        <div class="tui clearfix">
+        	<div class="fl">每日手游头条</div>
+            <span class="fl"></span>
+            <i class="fr"><·></i>
+        </div>
+		<ul class="toutiao clearfix">
+        	<li class="fl"><img src="img/2013.jpg"/><span>什么什么什么</span></li>
+        	<li class="fl"><img src="img/2013.jpg"/><span>什么什么什么</span></li>
+        </ul>
+        <footer>
+        	<div>
+            	<a href="javascript:;">WAP版</a>|<a href="javascript:;">桌面版</a>|<a href="javascript:;">帮助中心</a>
+            </div>
+            <i>@2013-2017 Name.All Right Left</i>
+            <em></em>
+        </footer>
+    </div>
+</div>
+</body>
+</html>
