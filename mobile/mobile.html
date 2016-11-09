@@ -3,43 +3,15 @@
 <head>
 <meta charset="utf-8">
 <title>移动端导航</title>
-<link type="text/css" rel="stylesheet" href="stylesheets/base.css" />
+<link type="text/css" rel="stylesheet" href="css/base.css" />
 <style>
 body{ width:100%; height:100%;}
 /*二维码*/
 #box{ width:100%; background:teansparent; position:absolute; top:0; left:0; z-index:1; display:none;}
-#box div{ width:20%; position:absolute;left:40%;top:15%;}
+#box div{ width:20%; position:fixed;left:40%;top:40%;}
 #box img{ width:100%;}
 #box a{ position:absolute; width:10%; height:10%; background:url(images/x.png) no-repeat; background-size:100%; top:0; right:0; font-size:100%;}
 /*页面展示作品*/
-@-webkit-keyframes test{
-	from{-webkit-transform:rotate(15deg);}
-	25%{-webkit-transform:rotate(-15deg);}
-	50%{-webkit-transform:rotate(15deg);}
-	75%{-webkit-transform:rotate(-15deg);}
-	to{-webkit-transform:rotate(15deg);}
-}
-@-moz-keyframes test{
-	from{-moz-transform:rotate(15deg);}
-	25%{-moz-transform:rotate(-15deg);}
-	50%{-moz-transform:rotate(15deg);}
-	75%{-moz-transform:rotate(-15deg);}
-	to{-moz-transform:rotate(15deg);}
-}
-@-ms-keyframes test{
-	from{-ms-transform:rotate(15deg);}
-	25%{-ms-transform:rotate(-15deg);}
-	50%{-ms-transform:rotate(15deg);}
-	75%{-ms-transform:rotate(-15deg);}
-	to{-ms-transform:rotate(15deg);}
-}
-@-o-keyframes test{
-	from{-o-transform:rotate(15deg);}
-	25%{-o-transform:rotate(-15deg);}
-	50%{-o-transform:rotate(15deg);}
-	75%{-o-transform:rotate(-15deg);}
-	to{-o-transform:rotate(15deg);}
-}
 @keyframes test{
 	from{transform:rotate(15deg);}
 	25%{transform:rotate(-15deg);}
@@ -55,31 +27,18 @@ li span{ position:absolute; bottom:0; left:0; width:100%; text-align:center; hei
 </style>
 <script>
 window.onload=function(){
+	var oUl=document.getElementById('u1');
 	var oBox=document.getElementById('box');
 	var aLi=document.getElementsByTagName('li');
 	var oStop=document.getElementById('stop');
 	var oEr=document.getElementById('er');
 	var oSpan=document.getElementById('sp');
-	oBox.style.height=document.documentElement.clientHeight+'px';
+	oBox.style.height=oUl.offsetHeight+'px';
 	for(var i=0;i<aLi.length;i++){
 		(function(index){
 			aLi[i].onclick=function(){//点击弹出二维码
 				oEr.src='images/'+index+'r.png';
 				oBox.style.display='block';
-			};
-			aLi[i].onmouseover=function(){//移入摇摆
-				this.style.WebkitAnimation='test 2s linear infinite';
-				this.style.MozAnimation='test 2s linear infinite';
-				this.style.msAnimation='test 2s linear infinite';
-				this.style.OAnimation='test 2s linear infinite';
-				this.style.animation='test 2s linear infinite';
-			};
-			aLi[i].onmouseout=function(){//移出停止
-				this.style.WebkitAnimation='';
-				this.style.MozAnimation='';
-				this.style.msAnimation='';
-				this.style.OAnimation='';
-				this.style.Animation='';
 			};
 		})(i);
 	}
@@ -97,7 +56,7 @@ window.onload=function(){
             <a href="javascript:;" id="stop"></a>
     	</div>
     </div>
-	<ul class="clearfix">
+	<ul class="clearfix" id="u1">
     	<li class="fl">
         	<img src="images/0.PNG"/>
         	<span>果壳</span>
